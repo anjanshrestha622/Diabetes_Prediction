@@ -3,16 +3,10 @@ src/visualization/dl_figures.py
 ================================
 Generates the deep learning and clinical summary figures:
 
-  Figures 17-19 - Training curves for ANN, DNN, and LSTM individually
-  Figure 20     - All three DL models compared side by side
-  Figure 21     - Clinical priority ranking by false-negative rate
-  Figure 22     - Comprehensive 3-metric comparison (all 10 models)
-
-These figures support Section IV-B and the conclusions of the thesis.
-Figure 21 is the most clinically important: it re-ranks all ten models
-by false-negative rate to show which models are actually most useful
-for diabetes screening, which is different from which models score
-highest on accuracy or AUC.
+Training curves for ANN, DNN, and LSTM individually
+All three DL models compared side by side
+Clinical priority ranking by false-negative rate
+Comprehensive 3-metric comparison (all 10 models)
 """
 
 import sys, os

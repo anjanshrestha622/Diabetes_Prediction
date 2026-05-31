@@ -10,15 +10,6 @@ Six metrics are computed per model:
   F1-Score    - harmonic mean of precision and recall
   ROC-AUC     - discrimination across all decision thresholds
   FN-Rate     - false negatives divided by total actual positives
-
-Why FN-Rate is the main clinical metric
-----------------------------------------
-In a diabetes screening context the worst type of error is a false
-negative: a patient who actually has diabetes is told they are healthy
-and sent home without any treatment or follow-up. Standard metrics
-like accuracy and AUC do not capture this directly. FN-Rate measures
-it explicitly and is used as the primary clinical ranking criterion
-in Figure 21 and the conclusions of the thesis.
 """
 
 import os

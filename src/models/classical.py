@@ -1,7 +1,7 @@
 """
 src/models/classical.py
 =======================
-Defines, trains, and tunes all seven classical machine learning models.
+ We defines, trains, and tunes all seven classical machine learning models.
 
 Each model is trained twice:
   - Base version   : sensible default hyperparameters

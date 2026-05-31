@@ -15,16 +15,6 @@ What this script does, in order:
   Phase 5  Generate all 19 code-produced figures to outputs/figures/
   Phase 6  Print a final summary of the key results
 
-The full run takes around 60-90 seconds on a standard Windows laptop.
-Because the random seed is fixed at 42 throughout, the results will
-be identical every time the script is run.
-
-Note on figures
----------------
-Figures 1, 2, and 3 (flowcharts and the approach diagram) were created
-manually using a diagramming tool and are not produced by this script.
-This script generates Figures 4 through 22.
-
 Author      : Anjan Shrestha
 Degree      : Master of Information Technology (Software Engineering)
 University  : Charles Darwin University
