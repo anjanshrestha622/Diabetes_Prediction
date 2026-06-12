@@ -201,10 +201,13 @@ def figure21_clinical_ranking(results_df: pd.DataFrame) -> None:
                    height=0.60, zorder=3)
 
     for bar, fnr, rec in zip(bars, fn_rates, rec_vals):
-        ax.text(fnr + 0.008,
+        ax.text(
+                bar.get_width() - 0.008,        # just inside the right edge of bar
                 bar.get_y() + bar.get_height() / 2,
-                f"FN-Rate: {fnr:.3f}   |   Recall: {rec:.3f}",
-                va="center", fontsize=9.5, color=WHITE, fontfamily=FONT)
+                f"  FN = {fnr:.3f}   Recall = {rec:.3f}  ",
+                va="center", ha="right",        # right-aligned so it stays inside
+                fontsize=10, fontweight="bold",
+                color=WHITE, fontfamily=FONT, zorder=5)
 
     ax.set_xlabel("False-Negative Rate  (lower = clinically better)",
                   color=WHITE, fontsize=11, fontfamily=FONT)
@@ -213,7 +216,7 @@ def figure21_clinical_ranking(results_df: pd.DataFrame) -> None:
         "False-Negative Rate Across All Ten Models",
         color=WHITE, fontsize=12, fontweight="bold",
         pad=14, fontfamily=FONT)
-    ax.set_xlim(0, 0.74)
+    ax.set_xlim(0, 0.65)
     ax.set_yticklabels(fn_names, color=WHITE, fontsize=10.5,
                        fontfamily=FONT)
 
@@ -222,8 +225,8 @@ def figure21_clinical_ranking(results_df: pd.DataFrame) -> None:
         mpatches.Patch(color=AMBER, label="FN-Rate 0.31 to 0.42  -  Moderate"),
         mpatches.Patch(color=RED,   label="FN-Rate above 0.42  -  Not suitable for screening"),
     ]
-    ax.legend(handles=legend_patches, loc="lower right", fontsize=9.5,
-              framealpha=0.42, facecolor=NAVY, labelcolor=WHITE)
+    ax.legend(handles=legend_patches, loc="lower right", fontsize=10,
+              framealpha=0.60, facecolor=NAVY, labelcolor=WHITE , edgecolor="#555555", borderpad=0.8)
 
     plt.tight_layout(pad=1.8)
     save_fig("Figure21_Clinical_FN_Rate_Ranking.png", fig)

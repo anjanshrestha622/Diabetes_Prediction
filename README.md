@@ -1,6 +1,6 @@
 # PIMA Diabetes Prediction - Complete Analysis Pipeline
 
-**Author:** Anjan Shrestha  
+**Author:** Anjan Shrestha  (S375649)
 **Degree:** Master of Information Technology (Software Engineering)  
 **University:** Charles Darwin University  
 **Supervisor:** Dr. Asif Karim  
@@ -97,8 +97,6 @@ python run.py
 | Figure 21 | Clinical priority ranking by false-negative rate |
 | Figure 22 | Three-metric comprehensive comparison (all 10 models) |
 
-Figures 1, 2, and 3 (ML flowchart, DL flowchart, and approach diagram) were
-created manually using a diagramming tool and are not produced by this code.
 
 **2 result files** saved to `outputs/results/`:
 - `metrics_results.csv` - full results table with all 6 metrics
@@ -126,6 +124,4 @@ created manually using a diagramming tool and are not produced by this code.
 ## Dataset
 
 PIMA Indian Diabetes Dataset  
-Source: UCI Machine Learning Repository  
-Link: https://archive.ics.uci.edu/dataset/34/diabetes  
 768 records, 8 clinical features, binary outcome (diabetic/non-diabetic)

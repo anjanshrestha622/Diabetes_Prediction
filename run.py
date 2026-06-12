@@ -15,7 +15,7 @@ What this script does, in order:
   Phase 5  Generate all 19 code-produced figures to outputs/figures/
   Phase 6  Print a final summary of the key results
 
-Author      : Anjan Shrestha
+Author      : Anjan Shrestha (S375649)
 Degree      : Master of Information Technology (Software Engineering)
 University  : Charles Darwin University
 Supervisor  : Dr. Asif Karim
@@ -44,9 +44,9 @@ from src.models.deep_learning import train_all as train_deep
 
 from src.evaluation import evaluate_all, save_results
 
-from src.visualization.eda_figures import generate_all as gen_eda
-from src.visualization.ml_figures  import generate_all as gen_ml
-from src.visualization.dl_figures  import generate_all as gen_dl
+from src.visualisation.eda_figures import generate_all as gen_eda
+from src.visualisation.ml_figures  import generate_all as gen_ml
+from src.visualisation.dl_figures  import generate_all as gen_dl
 
 
 def main():

@@ -43,7 +43,7 @@ def figures_7_to_14_bar_charts(base_acc: dict, tuned_acc: dict) -> None:
     """
     for model_name in BAR_COLORS:
         fig_n      = MODEL_FIG_NUM[model_name]
-        c_base, c_tuned = BAR_COLORS[model_name]
+        c_base, c_tuned = BLUE, TEAL
         ba = base_acc[model_name]
         ta = tuned_acc[model_name]
 

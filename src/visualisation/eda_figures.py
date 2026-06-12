@@ -46,7 +46,7 @@ def figure4_dataset_info(df_raw: pd.DataFrame) -> None:
     # Title bar
     ax.add_patch(FancyBboxPatch(
         (0.03, 0.91), 0.94, 0.08,
-        boxstyle="round,pad=0.01", facecolor="#0a0a20", lw=0))
+        boxstyle="round,pad=0.01", facecolor="#000000", lw=0))
     ax.text(0.5, 0.952, "PIMA Indian Diabetes Dataset  -  df.info() Summary",
             ha="center", va="center", fontsize=13.5,
             fontweight="bold", color=WHITE, fontfamily=FONT)
@@ -59,21 +59,21 @@ def figure4_dataset_info(df_raw: pd.DataFrame) -> None:
     ]
     for i, line in enumerate(sub):
         ax.text(0.06, 0.875 - i * 0.033, line,
-                fontsize=9.5, color="#99AACC",
+                fontsize=9.5, color="#ffffff",
                 fontfamily="monospace", va="center")
 
     # Column headers
     hxs = [0.06, 0.14, 0.60, 0.82]
     for hx, h in zip(hxs, ["#", "Column", "Non-Null Count", "Dtype"]):
         ax.text(hx, 0.768, h, fontsize=9.5, fontweight="bold",
-                color="#7EC8F5", fontfamily="monospace", va="center")
+                color="#1092E3", fontfamily="monospace", va="center")
 
-    ax.plot([0.04, 0.96], [0.752, 0.752], color="#7EC8F5", lw=0.8, alpha=0.7)
+    ax.plot([0.04, 0.96], [0.752, 0.752], color="#0a0a20", lw=0.8, alpha=0.7)
 
     # Data rows
     for i, col in enumerate(df_raw.columns):
         y     = 0.712 - i * 0.065
-        bg    = "#14172A" if i % 2 == 0 else "#0e1022"
+        bg    = "#FFFFFF" if i % 2 == 0 else "#cec8c8"
         ax.add_patch(FancyBboxPatch(
             (0.04, y - 0.030), 0.92, 0.056,
             boxstyle="square,pad=0", facecolor=bg, lw=0))
@@ -81,13 +81,13 @@ def figure4_dataset_info(df_raw: pd.DataFrame) -> None:
         dtype = str(df_raw[col].dtype)
         for hx, val, vc in zip(hxs,
                                 [str(i), col, f"{nn} non-null", dtype],
-                                ["#F39C12", "#F1C40F", "#2ECC71", "#E74C3C"]):
+                                ["#090909", "#000000", "#011409", "#0C0403"]):
             ax.text(hx, y, val, fontsize=9.2, color=vc,
                     fontfamily="monospace", va="center")
 
     bot_y = 0.712 - len(df_raw.columns) * 0.065 - 0.012
     ax.plot([0.04, 0.96], [bot_y, bot_y],
-            color="#7EC8F5", lw=0.7, alpha=0.5)
+            color="#00111B", lw=0.7, alpha=0.5)
 
     int_c   = sum(1 for c in df_raw.columns if df_raw[c].dtype == "int64")
     float_c = sum(1 for c in df_raw.columns if df_raw[c].dtype == "float64")
@@ -96,10 +96,10 @@ def figure4_dataset_info(df_raw: pd.DataFrame) -> None:
     d_n     = (df_raw["Outcome"] == 1).sum()
 
     footer = [
-        (f"dtypes:  int64({int_c}),  float64({float_c})", "#E74C3C"),
-        (f"memory usage:  {mem_kb:.1f} KB",               "#2ECC71"),
+        (f"dtypes:  int64({int_c}),  float64({float_c})", "#FFFFFF"),
+        (f"memory usage:  {mem_kb:.1f} KB",               "#FFFFFF"),
         (f"Class balance  :  Non-Diabetic = {nd_n} (65.1%)   "
-         f"Diabetic = {d_n} (34.9%)",                     "#7EC8F5"),
+         f"Diabetic = {d_n} (34.9%)",                     "#F9F3F3"),
     ]
     fy = bot_y - 0.040
     for txt, col in footer:
@@ -157,12 +157,6 @@ def figure5_correlation_heatmap(df_clean: pd.DataFrame) -> None:
     ax.set_xticklabels(ax.get_xticklabels(),
                        rotation=40, ha="right", fontsize=9.5)
     ax.set_yticklabels(ax.get_yticklabels(), rotation=0, fontsize=9.5)
-
-    ax.text(0.5, -0.13,
-            "Glucose has the strongest positive correlation with Outcome "
-            "(r = 0.49).  BMI, Age, and Pregnancies follow as secondary predictors.",
-            transform=ax.transAxes, ha="center", fontsize=9,
-            color="#333333", style="italic")
 
     fig.text(0.5, -0.04,
              "Figure 5.  Correlation Heatmap  "
